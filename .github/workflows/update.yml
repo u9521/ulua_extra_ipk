@@ -212,9 +212,9 @@ jobs:
         rm -rf ./op-xunlei/xunlei
 
         git clone https://github.com/brvphoenix/wrtbwmon.git ./wrtbwmon
-        rm -rf ./README.md
-        rm -rf ./.git
-        rm -rf ./.github
+        rm -rf ./wrtbwmon/README.md
+        rm -rf ./wrtbwmon/.git
+        rm -rf ./wrtbwmon/.github
 
     - name: Apply
       env:
