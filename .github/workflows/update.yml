@@ -61,7 +61,6 @@ jobs:
         rm -rf ./luci-app-oled
         rm -rf ./op-go-aliyundrive/*
         rm -rf ./wrtbwmon
-        rm -rf ./github
         
          git clone https://github.com/rufengsuixing/luci-app-adguardhome ./luci-app-adguardhome
          rm -rf ./luci-app-adguardhome/README.md
