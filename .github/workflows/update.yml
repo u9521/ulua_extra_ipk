@@ -212,7 +212,7 @@ jobs:
         rm -rf ./op-xunlei/xunlei
 
         # 修复WARNING: Makefile 'package/feeds/extraipk/luci-app-wechatpush/Makefile' has a dependency on 'wrtbwmon', which does not exist
-        git clone https://github.com/brvphoenix/wrtbwmon.git
+        git clone https://github.com/brvphoenix/wrtbwmon.git ./wrtbwmon
         rm -rf ./wrtbwmon/README.md
         rm -rf ./wrtbwmon/.git
         rm -rf ./wrtbwmon/.github
