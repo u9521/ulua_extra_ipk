@@ -20,8 +20,6 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set git
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run : |
         git config --global user.email "${{ secrets.GH_MAIL }}"
         git config --global user.name "${{ secrets.GH_NAME }}"
@@ -219,6 +217,8 @@ jobs:
         rm -rf ./.github
 
     - name: Apply
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         git add .
         git commit -m "Auto Sync: $(date +%Y-%m-%d" "%H:%M)"
