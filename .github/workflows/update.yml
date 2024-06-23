@@ -20,9 +20,11 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Set git
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run : |
-        git config --global user.email "waiquwang@gmail.com"
-        git config --global user.name "mzal888"
+        git config --global user.email "github-actions[bot]"
+        git config --global user.name "github-actions[bot]@users.noreply.github.com"
         sudo timedatectl set-timezone "Asia/Shanghai"
 
     - name: Delete workflow runs
