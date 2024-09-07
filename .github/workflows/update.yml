@@ -134,17 +134,17 @@ jobs:
         rm -rf ./patch/wall/.git
         rm -rf ./patch/wall/chinadns-ng
         
-        git clone https://github.com/fw876/helloworld ./patch/wall/helloworld
-        mv ./patch/wall/helloworld/redsocks2 ./patch/wall/
-        mv ./patch/wall/helloworld/lua-neturl ./patch/wall/
-        mv ./patch/wall/helloworld/shadow-tls ./patch/wall/
-        mv ./patch/wall/helloworld/luci-app-ssr-plus ./patch/wall-luci/
-        rm -rf ./patch/wall/gn
-        rm -rf ./patch/wall/naiveproxy
-        mv ./patch/wall/helloworld/gn ./patch/wall/
-        mv ./patch/wall/helloworld/naiveproxy ./patch/wall/
+        # git clone https://github.com/fw876/helloworld ./patch/wall/helloworld
+        # mv ./patch/wall/helloworld/redsocks2 ./patch/wall/
+        # mv ./patch/wall/helloworld/lua-neturl ./patch/wall/
+        # mv ./patch/wall/helloworld/shadow-tls ./patch/wall/
+        # mv ./patch/wall/helloworld/luci-app-ssr-plus ./patch/wall-luci/
+        # rm -rf ./patch/wall/gn
+        # rm -rf ./patch/wall/naiveproxy
+        # mv ./patch/wall/helloworld/gn ./patch/wall/
+        # mv ./patch/wall/helloworld/naiveproxy ./patch/wall/
         
-        rm -rf ./patch/wall/helloworld
+        # rm -rf ./patch/wall/helloworld
     
         git clone https://github.com/xiaorouji/openwrt-passwall ./patch/wall-luci/pass
         git clone https://github.com/xiaorouji/openwrt-passwall2 ./patch/wall-luci/pass2
@@ -158,6 +158,7 @@ jobs:
         rm -rf ./OpenClash
 
         git clone https://github.com/sbwml/luci-app-mosdns ./op-mosdns
+
         git clone https://github.com/sbwml/v2ray-geodata ./op-mosdns/v2ray-geodata
         rm -rf ./op-mosdns/install.sh
         rm -rf ./op-mosdns/.github
@@ -166,11 +167,13 @@ jobs:
         rm -rf ./op-mosdns/v2ray-geodata/.github
         rm -rf ./op-mosdns/v2ray-geodata/.git
         rm -rf ./op-mosdns/v2ray-geodata/README.md
+
         git clone https://github.com/sbwml/openwrt-alist ./op-alist/
         rm -rf ./op-alist/.github
         rm -rf ./op-alist/.git
         rm -rf ./op-alist/README.md
         rm -rf ./op-alist/install.sh
+
         git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic ./luci-app-unblockneteasemusic/
         rm -rf ./luci-app-unblockneteasemusic/.github
         rm -rf ./luci-app-unblockneteasemusic/.git
@@ -178,12 +181,13 @@ jobs:
  
        
         git clone https://github.com/sirpdboy/luci-app-ddns-go ./op-ddnsgo/
-        git clone https://github.com/sirpdboy/luci-app-lucky ./op-lucky/
-        rm -rf ./op-lucky/README.md
         rm -rf ./op-ddnsgo/README.md
         rm -rf ./op-ddnsgo/.github
-        rm -rf ./op-lucky/.github
         rm -rf ./op-ddnsgo/.git
+
+        git clone https://github.com/sirpdboy/luci-app-lucky ./op-lucky/
+        rm -rf ./op-lucky/README.md
+        rm -rf ./op-lucky/.github
         rm -rf ./op-lucky/.git
 
        
@@ -198,24 +202,24 @@ jobs:
         rm -rf ./theme/luci-theme-argon/.gitignore
         rm -rf ./theme/luci-theme-argon-18.06/.github
         rm -rf ./theme/luci-theme-argon-18.06/.git
-        rm -rf ./theme/luci-theme-argon-18.06/.gitignore       
+        rm -rf ./theme/luci-theme-argon-18.06/.gitignore
         rm -rf ./theme/luci-theme-argon/README*
         rm -rf ./theme/luci-theme-argon/RELEASE*
         rm -rf ./theme/luci-theme-argon-18.06/README*
         
-        git clone https://github.com/unifreq/luci-app-oled ./oled
-        mv ./oled/luci-app-oled ./
-        rm -rf ./oled
+        # git clone https://github.com/unifreq/luci-app-oled ./oled
+        # mv ./oled/luci-app-oled ./
+        # rm -rf ./oled
       
-        git clone https://github.com/gngpp/thunder ./op-xunlei/xunlei
-        mv ./op-xunlei/xunlei/openwrt/* ./op-xunlei/
-        rm -rf ./op-xunlei/xunlei
+        # git clone https://github.com/gngpp/thunder ./op-xunlei/xunlei
+        # mv ./op-xunlei/xunlei/openwrt/* ./op-xunlei/
+        # rm -rf ./op-xunlei/xunlei
 
         # 修复WARNING: Makefile 'package/feeds/extraipk/luci-app-wechatpush/Makefile' has a dependency on 'wrtbwmon', which does not exist
-        git clone https://github.com/brvphoenix/wrtbwmon.git ./wrtbwmon
-        rm -rf ./wrtbwmon/README.md
-        rm -rf ./wrtbwmon/.git
-        rm -rf ./wrtbwmon/.github
+        # git clone https://github.com/brvphoenix/wrtbwmon.git ./wrtbwmon
+        # rm -rf ./wrtbwmon/README.md
+        # rm -rf ./wrtbwmon/.git
+        # rm -rf ./wrtbwmon/.github
 
     - name: Apply
       env:
