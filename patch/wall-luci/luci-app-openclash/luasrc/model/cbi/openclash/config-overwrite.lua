@@ -18,6 +18,7 @@ bold_off = [[</strong>]]
 local op_mode = string.sub(luci.sys.exec('uci get openclash.config.operation_mode 2>/dev/null'),0,-2)
 if not op_mode then op_mode = "redir-host" end
 local lan_int_name = uci:get("openclash", "config", "lan_interface_name") or "0"
+
 local lan_ip
 if lan_int_name == "0" then
 	lan_ip = SYS.exec("uci -q get network.lan.ipaddr |awk -F '/' '{print $1}' 2>/dev/null |tr -d '\n'")
@@ -224,6 +225,13 @@ end
 if op_mode == "fake-ip" then
 o = s:taboption("dns", Flag, "custom_fakeip_filter", translate("Fake-IP-Filter"))
 o.default = 0
+
+o = s:taboption("dns", ListValue, "custom_fakeip_filter_mode", translate("Fake-IP-Filter-Mode"))
+o.description = translate("Fake-IP is not returned if the matching succeeds when blacklist mode or Fake-IP is returned if the matching succeeds when whitelist mode")
+o.default = "blacklist"
+o:value("blacklist", translate("Blacklist Mode"))
+o:value("whitelist", translate("Whitelist Mode"))
+o:depends("custom_fakeip_filter", "1")
 
 custom_fake_black = s:taboption("dns", Value, "custom_fake_filter")
 custom_fake_black.template = "cbi/tvalue"
@@ -432,7 +440,7 @@ o.default = 0
 custom_rules = s:taboption("rules", Value, "custom_rules")
 custom_rules:depends("enable_custom_clash_rules", 1)
 custom_rules.template = "cbi/tvalue"
-custom_rules.description = font_green..bold_on..translate("(Priority)")..bold_off..font_off.." "..translate("Custom Rules Here, For More Go:").." ".."<a href='javascript:void(0)' onclick='javascript:return winOpen(\"https://lancellc.gitbook.io/clash/clash-config-file/rules\")'>https://lancellc.gitbook.io/clash/clash-config-file/rules</a>".." ,"..translate("IP To CIDR:").." ".."<a href='javascript:void(0)' onclick='javascript:return winOpen(\"http://ip2cidr.com\")'>http://ip2cidr.com</a>"
+custom_rules.description = font_green..bold_on..translate("(Priority)")..bold_off..font_off.." "..translate("Custom Rules Here, For More Go:").." ".."<a href='javascript:void(0)' onclick='javascript:return winOpen(\"https://wiki.metacubex.one/config/rules/\")'>https://wiki.metacubex.one/config/rules/</a>".." ,"..translate("IP To CIDR:").." ".."<a href='javascript:void(0)' onclick='javascript:return winOpen(\"http://ip2cidr.com\")'>http://ip2cidr.com</a>"
 custom_rules.rows = 20
 custom_rules.wrap = "off"
 
@@ -452,7 +460,7 @@ end
 custom_rules_2 = s:taboption("rules", Value, "custom_rules_2")
 custom_rules_2:depends("enable_custom_clash_rules", 1)
 custom_rules_2.template = "cbi/tvalue"
-custom_rules_2.description = font_green..bold_on..translate("(Extended)")..bold_off..font_off.." "..translate("Custom Rules Here, For More Go:").." ".."<a href='javascript:void(0)' onclick='javascript:return winOpen(\"https://lancellc.gitbook.io/clash/clash-config-file/rules\")'>https://lancellc.gitbook.io/clash/clash-config-file/rules</a>".." ,"..translate("IP To CIDR:").." ".."<a href='javascript:void(0)' onclick='javascript:return winOpen(\"http://ip2cidr.com\")'>http://ip2cidr.com</a>"
+custom_rules_2.description = font_green..bold_on..translate("(Extended)")..bold_off..font_off.." "..translate("Custom Rules Here, For More Go:").." ".."<a href='javascript:void(0)' onclick='javascript:return winOpen(\"https://wiki.metacubex.one/config/rules/\")'>https://wiki.metacubex.one/config/rules/</a>".." ,"..translate("IP To CIDR:").." ".."<a href='javascript:void(0)' onclick='javascript:return winOpen(\"http://ip2cidr.com\")'>http://ip2cidr.com</a>"
 custom_rules_2.rows = 20
 custom_rules_2.wrap = "off"
 
