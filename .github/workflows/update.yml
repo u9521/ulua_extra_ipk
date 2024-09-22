@@ -4,11 +4,11 @@ on:
   repository_dispatch:
   workflow_dispatch:
 
-# 定时触发编译
+# 定时更新
   schedule:
     - cron: 0 23 * * *
 
-# 点赞☆Star触发编译
+# 点赞☆Star触发更新
 #  watch:
 #    types: [started]
 
@@ -61,7 +61,7 @@ jobs:
         rm -rf ./wrtbwmon
         # replaced with kongfl888 adguardhome
         git clone https://github.com/kongfl888/luci-app-adguardhome ./luci-app-adguardhome
-        rm -rf ./luci-app-adguardhome/README.md
+        # rm -rf ./luci-app-adguardhome/README.md
         rm -rf ./luci-app-adguardhome/.github
         rm -rf ./luci-app-adguardhome/.git
         rm -rf ./luci-app-adguardhome/.gitattributes
