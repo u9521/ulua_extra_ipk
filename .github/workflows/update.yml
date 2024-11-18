@@ -122,11 +122,11 @@ jobs:
         # rm -rf ./op-go-aliyundrive/luci-app-go-aliyundrive-webdav/README.md
 
 
-        git clone https://github.com/destan19/OpenAppFilter ./op-oaf
-        rm -rf ./op-oaf/.git
-        rm -rf ./op-oaf/.github
+        # git clone https://github.com/destan19/OpenAppFilter ./op-oaf
+        # rm -rf ./op-oaf/.git
+        # rm -rf ./op-oaf/.github
         # rm -rf ./op-oaf/README.md
-        rm -rf ./op-oaf/LICENSE
+        # rm -rf ./op-oaf/LICENSE
 
         
         git clone https://github.com/xiaorouji/openwrt-passwall-packages ./patch/wall
